@@ -2,176 +2,170 @@
 <html>
     <head>
         <title>Wordle</title>
-	    <meta charset="UTF-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <style>
-		div, h1, span, p {
-			font-family: Arial, Helvetica, sans-serif;
-		}
+	div, h1, span, p {
+	    font-family: Arial, Helvetica, sans-serif;
+	}
 		
-		body {
-			display: flex;
-			flex-direction: column;
+	body {
+	    display: flex;
+	    flex-direction: column;
             background-color: #F4A7B9;
-		}
+	}
 
         .box1 {
-                padding: 10px;
-                background-color: #D17889;
-                position: relative;
-                right: 10px;
-                width: 100%;
-                bottom: 10px;
-            }
-            .box2 {
-                padding: 10px;
-                background-color: #E08E9B;
-                position: relative;
-                right: 10px;
-                width: 100%;
-                bottom: 10px;
-            }
-            .icon-container {
-                position: absolute;
-                top: 50px;
-                left: 25px;
-            }
-            .icon {
-                width: 100px;
-                height: auto;
-            }
-            .wordle {
-                text-align: center; 
-                font-size: 60px;
-                font-weight: bold;
-                font-family: Copperplate, Fantasy;
-                color: #C75C78;
-            }
-            .wordle:hover {
-                color: #ffffff;
-                transition-duration: 0.3s;
-            }
-
-            /* Nav */
-            .nav-ul {
-                list-style-type: none;
-                margin: 0px;
-                padding: 0px;
-            }
-            .nav-a {
-                text-decoration: none;
-                color:#D36B85;
-                font-family: 'Arial Narrow Bold', sans-serif;
-                font-weight: bold;
-            }
-            .nav-h .nav-ul {
-                display: flex;
-                justify-content: center;
-                gap: 20px;
-            }
-            .nav-h li {
-                width: 190px;
-                float: left;
-            }
-            .nav-h .nav-a  {
-                font-size: 16px;
-                font-weight: 700;
-                font-family: 'Exo 2', sans-serif !important; 
-                text-transform: uppercase;
-                letter-spacing: 2px;
-                display: block;
-                background: #E08E9B;
-                padding: 15px 20px;
-                text-align: center;
-            }
-
+            padding: 10px;
+            background-color: #D17889;
+            position: relative;
+            right: 10px;
+            width: 100%;
+            bottom: 10px;
+        }
+        
+        .box2 {
+            padding: 10px;
+            background-color: #E08E9B;
+            position: relative;
+            right: 10px;
+            width: 100%;
+            bottom: 10px;
+        }
+           
+        .wordle {
+            text-align: center; 
+            font-size: 60px;
+            font-weight: bold;
+            font-family: Copperplate, Fantasy;
+            color: #C75C78;
+        }
             
-            .nav-h .nav-a:hover, .nav-h #nav-active1:hover {
-                color: white;
-                background:#E08E9B;
-                
-            }
-            .nav-h .nav-a:active, .nav-h #nav-active1:active  {
-                color: white;
-                background: #E08E9B;
-            }
-            .nav-a#nav-active1 {
-                color: #E08E9B;
-                background: #ffffff;
+        .wordle:hover {
+            color: #ffffff;
+            transition-duration: 0.3s;
+        }
 
-            }
+        .nav-ul {
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+        }
+            
+        .nav-a {
+            text-decoration: none;
+            color:#D36B85;
+            font-family: 'Arial Narrow Bold', sans-serif;
+            font-weight: bold;
+        }
+            
+        .nav-h .nav-ul {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+            
+        .nav-h li {
+            width: 190px;
+            float: left;
+        }
+            
+        .nav-h .nav-a  {
+            font-size: 16px;
+            font-weight: 700;
+            font-family: 'Exo 2', sans-serif !important; 
+            text-transform: uppercase;               
+            letter-spacing: 2px;
+            display: block;
+            background: #E08E9B;
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        .nav-h .nav-a:hover, .nav-h #nav-active1:hover {
+            color: white;
+            background:#E08E9B;
+        }
+
+        .nav-h .nav-a:active, .nav-h #nav-active1:active  {
+            color: white;
+            background: #E08E9B;
+        }
+            
+        .nav-a#nav-active1 {
+            color: #E08E9B;
+            background: #ffffff;
+
+        }
 
 		
-		hr {
-			width: 500px;
-			margin-top: 20px;
-			margin-bottom: 20px;
-		}
+	hr {
+	    width: 500px;
+	    margin-top: 20px;
+	    margin-bottom: 20px;
+	}
 		
-		h1 {
-			text-align: center;
-			font-size: 36px;
-			font-weight: bold;
-			letter-spacing: 2px;
+	h1 {
+	    text-align: center;
+	    font-size: 36px;
+	    font-weight: bold;
+	    letter-spacing: 2px;
             color: #D45C88;
-		}
+	}
 		
-		.box {
-			width: 345px;
-			height: 70px;
-			background-color: #F4A7B9;
-			margin: 0 auto;
-			display: flex;
-			flex-wrap: wrap;
-		}
+	.box {
+	    width: 345px;
+	    height: 70px;
+	    background-color: #F4A7B9;
+	    margin: 0 auto;
+	    display: flex;
+	    flex-wrap: wrap;
+	}
 
-		.box > div {
-			border: 2px solid #F3BBCD;
-			width: 60px;
-			height: 60px;
-			margin: 2.5px;
-			color: black;
-			font-size: 36px;
-			font-weight: bold;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
+	.box > div {
+	    border: 2px solid #F3BBCD;
+	    width: 60px;
+	    height: 60px;
+ 	    margin: 2.5px;
+	    color: black;
+	    font-size: 36px;
+	    font-weight: bold;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	}
 
-		.animated {
-			animation: flip 0.5s ease;
-		}
+	 .animated {
+	    animation: flip 0.5s ease;
+	}
 	
 
-		button {
-		    background-color:#E06287;
-		    color: white;
-		    font-size: 18px;
-		    font-weight: bold;
-		    border: none;
-		    padding: 12px 24px;
-		    border-radius: 8px;
-		    cursor: pointer;
-		    display: block;
-		    margin: 20px auto; 
-		    transition: all 0.3s ease-in-out;
-		    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-		}
+	button {
+	    background-color:#E06287;
+	    color: white;
+	    font-size: 18px;
+	    font-weight: bold;
+	    border: none;
+	    padding: 12px 24px;
+	    border-radius: 8px;
+	    cursor: pointer;
+	    display: block;
+	    margin: 20px auto; 
+	    transition: all 0.3s ease-in-out;
+	    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+	}
 		
-		button:hover {
-		    background-color: #E06287;
-		    transform: scale(1.05);
-		}
+	button:hover {
+	    background-color: #E06287;
+	    transform: scale(1.05);
+	}
 		
-		button:active {
-		    transform: scale(0.98);
-		    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-		}
+	button:active {
+	    trasform: scale(0.98);
+	    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+	}
 
         /* Footer */
-        .container {
-                position: relative;
-        }
         .footer {
             height: 150px;
             width: 100%;
@@ -185,13 +179,13 @@
             color: #D45C88;
         }
         footer a {
-             color: #C75C78;
-             text-decoration: none;
+            color: #C75C78;
+            text-decoration: none;
         }
 
         .footer a:hover {
-              color: #F9C6D3; 
-    text-decoration: underline;
+            color: #F9C6D3; 
+            text-decoration: underline;
 }
 	</style>
         <script src="wordle.js"></script>
@@ -200,7 +194,7 @@
          <!-- Header-->
          <header>
             <section class="box1">
-                <h1 class="wordle">Wordly Game: Guess the Hidden Word</h1>
+            <h1 class="wordle">Wordly Game: Guess the Hidden Word</h1>
             </section>   
             <section class="box2">
                 <!-- Nav -->
