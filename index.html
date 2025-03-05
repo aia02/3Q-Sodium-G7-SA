@@ -2,218 +2,127 @@
 <html>
     <head>
         <title>Wordle</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <style>
-	div, h1, span, p {
-	    font-family: Arial, Helvetica, sans-serif;
-	}
+		div, h1, span, p {
+			font-family: Arial, Helvetica, sans-serif;
+		}
 		
-	body {
-	    display: flex;
-	    flex-direction: column;
-            background-color: #F4A7B9;
-	}
-
-        .box1 {
-            padding: 10px;
-            background-color: #D17889;
-            position: relative;
-            right: 10px;
-            width: 100%;
-            bottom: 10px;
-        }
-        
-        .box2 {
-            padding: 10px;
-            background-color: #E08E9B;
-            position: relative;
-            right: 10px;
-            width: 100%;
-            bottom: 10px;
-        }
-           
-        .wordle {
-            text-align: center; 
-            font-size: 60px;
-            font-weight: bold;
-            font-family: Copperplate, Fantasy;
-            color: #C75C78;
-        }
-            
-        .wordle:hover {
-            color: #ffffff;
-            transition-duration: 0.3s;
-        }
-
-        .nav-ul {
-            list-style-type: none;
-            margin: 0px;
-            padding: 0px;
-        }
-            
-        .nav-a {
-            text-decoration: none;
-            color:#D36B85;
-            font-family: 'Arial Narrow Bold', sans-serif;
-            font-weight: bold;
-        }
-            
-        .nav-h .nav-ul {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-            
-        .nav-h li {
-            width: 190px;
-            float: left;
-        }
-            
-        .nav-h .nav-a  {
-            font-size: 16px;
-            font-weight: 700;
-            font-family: 'Exo 2', sans-serif !important; 
-            text-transform: uppercase;               
-            letter-spacing: 2px;
-            display: block;
-            background: #E08E9B;
-            padding: 15px 20px;
-            text-align: center;
-        }
-
-        .nav-h .nav-a:hover, .nav-h #nav-active1:hover {
-            color: white;
-            background:#E08E9B;
-        }
-
-        .nav-h .nav-a:active, .nav-h #nav-active1:active  {
-            color: white;
-            background: #E08E9B;
-        }
-            
-        .nav-a#nav-active1 {
-            color: #E08E9B;
-            background: #ffffff;
-
-        }
-
+		body {
+			display: flex;
+			flex-direction: column;
+			background-color: #ffd1dd;
+		}
 		
-	hr {
-	    width: 500px;
-	    margin-top: 20px;
-	    margin-bottom: 20px;
-	}
+		hr {
+			width: 500px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			color:#C75C78; 
+			border-style:solid;
+		}
 		
-	h1 {
-	    text-align: center;
-	    font-size: 36px;
-	    font-weight: bold;
-	    letter-spacing: 2px;
-            color: #D45C88;
-	}
+		h1 {
+			text-align: center;
+			font-size: 36px;
+			font-weight: bold;
+			letter-spacing: 2px;
+			color: #C75C78;
+		}
 		
-	.box {
-	    width: 345px;
-	    height: 70px;
-	    background-color: #F4A7B9;
-	    margin: 0 auto;
-	    display: flex;
-	    flex-wrap: wrap;
-	}
-
-	.box > div {
-	    border: 2px solid lightgray;
-	    width: 60px;
-	    height: 60px;
- 	    margin: 2.5px;
-	    color: black;
-	    font-size: 36px;
-	    font-weight: bold;
-	    display: flex;
-	    align-items: center;
-	    justify-content: center;
-	}
-
-	 .animated {
-	    animation: flip 0.5s ease;
-	}
-	
-
-	button {
-	    background-color:#E06287;
-	    color: white;
-	    font-size: 18px;
-	    font-weight: bold;
-	    border: none;
-	    padding: 12px 24px;
-	    border-radius: 8px;
-	    cursor: pointer;
-	    display: block;
-	    margin: 20px auto; 
-	    transition: all 0.3s ease-in-out;
-	    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-	}
+		.box {
+			width: 345px;
+			height: 70px;
+			background-color: #ffd1dd;
+			margin: 0 auto;
+			display: flex;
+			flex-wrap: wrap;
+		}
 		
-	button:hover {
-	    background-color: #E06287;
-	    transform: scale(1.05);
-	}
+		.box > div {
+			border: 2px solid #C75C78;
+			width: 60px;
+			height: 60px;
+			margin: 2.5px;
+			color: black;
+			font-size: 36px;
+			font-weight: bold;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 		
-	button:active {
-	    trasform: scale(0.98);
-	    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-	}
-
-        /* Footer */
-        .footer {
-            height: 150px;
-            width: 100%;
-            background-color: #F4A7B9;
-            margin-top: 20px;
-            padding-top: 10px;
-        }
-        .footer-info {
-            text-align: center;
-            align-items: center;
-            color: #D45C88;
-        }
-        footer a {
-            color: #C75C78;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            color: #F9C6D3; 
-            text-decoration: underline;
-}
-	p.description {
-	    color: #C75C78;
-	}
+		.animated {
+			animation: flip 0.5s ease;
+		}
+		
+		@keyframes flip {
+			0% {
+				transform: scaleY(1);
+			}
+			50% {
+				transform: scaleY(0);
+			}
+		
+			100% {
+				transform: scaleY(1);
+			}
+		}
+		
+		button {
+			background-color: #E06287; 
+			color: white;
+			font-size: 18px;
+			font-weight: bold;
+			border: none;
+			padding: 12px 24px;
+			border-radius: 8px;
+			cursor: pointer;
+			display: block;
+			margin: 20px auto; 
+			transition: all 0.3s ease-in-out;
+			box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+			}
+		
+		button:hover {
+			background-color: #E06287s;
+			transform: scale(1.05);
+		}
+		
+		button:active {
+			transform: scale(0.98);
+			box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+		}
+		
+		/* Footer */
+		.footer {
+			height: 150px;
+			width: 100%;
+			background-color: #ffd1dd;
+			margin-top: 20px;
+			padding-top: 10px;
+		}
+		.footer-info {
+			text-align: center;
+			align-items: center;
+			color: #D45C88;
+		}
+		footer a {
+			color: #C75C78;
+			text-decoration: none;
+		}
+		
+		.footer a:hover {
+			color: #F9C6D3; 
+			text-decoration: underline;
+		}
 	</style>
         <script src="wordle.js"></script>
     </head>
     <body onload="setupGame()">
-         <!-- Header-->
-         <header>
-            <section class="box1">
-            <h1 class="wordle">Wordly Game: Guess the Hidden Word</h1>
-            </section>   
-            <section class="box2">
-                <!-- Nav -->
-                <nav>
-                    <div class="nav-h">
-                        <ul class="nav-ul">
-                            <li><a class="nav-a" href="https://www.nytimes.com/games/wordle/archive">Puzzles</a></li>
-                            <li><a class="nav-a" href="https://www.wikihow.com/Play-Wordle">About</a></li>
-                            <li><a class="nav-a" href="https://www.y8.com/">More Games</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </section> 
-        </header>
-        <h1>Let's Play Wordle!</h1>
-	    <hr>
+        <h1>Wordle</h1>
+	<hr>
 
         <div id="r-0" class="r-0 box">
             <div id="r-0-0"></div>
@@ -258,25 +167,24 @@
         <div class="answer">
             <button onclick="checkWord()">Enter a word</button>
         </div>
-         <!-- Footer -->
-         <footer class="footer">
+	
+	<!-- Footer -->
+        <footer class="footer">
             <div class="container">
-                <div class="footer-info">
-                    <span class="advertisements" style="font-size: 40px; letter-spacing: 1px">
-                        <br>
-                    </span>
-                    <p></p>
-                    <p class="description">
-                        Copyright &copy;2025 <a href="#">Wordle</a> 
-                        | <a class="footer-a" href="https://apps.apple.com/us/app/wordle/id1095569891">Wordles.com</a>
-                        | <a class="footer-a" href="https://www.google.com/maps">Sitemap</a>
-                        | <a class="footer-a" href="https://privacy.gov.ph/the-data-privacy-act-and-its-irr/">Privacy Policy</a>
-                        | <a class="footer-a" href="https://services3.cic.gc.ca/ecas/introduction.do?app=null">Terms of Service</a>
-                       </p>
-                </div>
-            </div>
-        </footer>
-    </body>
-</html>
+	    	<div class="footer-info">
+			<span class="advertisements" style="font-size: 40px; letter-spacing: 1px">
+			<br>
+			</span>
+			<p></p>
+			<p class="description">
+				Copyright &copy;2025 <a href="#">Wordle</a> 
+				| <a class="footer-a" href="#">Wordles.com</a>
+				| <a class="footer-a" href="#">Sitemap</a>
+				| <a class="footer-a" href="#">Privacy Policy</a>
+				| <a class="footer-a" href="#">Terms of Service</a>
+			</p>
+		</div>
+	    </div>
+	</footer>
     </body>
 </html>
